@@ -6,7 +6,7 @@ public class Liczby {
 
         Random rnd = new Random();
         int liczba = rnd.nextInt(101) + 1;
-        System.out.println("zgadnij liczbę");
+        System.out.println("zgadnij liczbę z zakresu 1-100");
         Scanner scan = new Scanner(System.in);
 
 
@@ -22,7 +22,7 @@ public class Liczby {
 
 
         }
-        System.out.println("brawo " + answer + " to " + liczba);
+        System.out.println("brawo chodziło o " + liczba);
 
 
     }
