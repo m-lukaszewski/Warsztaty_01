@@ -10,26 +10,30 @@ public class Liczby {
         Scanner scan = new Scanner(System.in);
 
 
-        try {
-            int answer = scan.nextInt();
-            while (answer != liczba) {
-                if (answer < liczba) {
-                    System.out.println("trochę więcej");
-                } else {
-                    System.out.println("trochę mniej");
-                }
-
-                answer = scan.nextInt();
-
-
+        int answer = getAnswer(scan);
+        while (answer != liczba) {
+            if (answer < liczba) {
+                System.out.println("trochę więcej");
+            } else {
+                System.out.println("trochę mniej");
             }
-            System.out.println("brawo " + answer + " to " + liczba);
 
-        } catch (
-                Exception e) {
-            System.out.println("wprowadź liczbę całkowitą");
+            answer = getAnswer(scan);
+
+
         }
+        System.out.println("brawo " + answer + " to " + liczba);
 
 
+    }
+
+
+    private static int getAnswer(Scanner scan) {
+
+        while (!scan.hasNextInt()) {
+            String value = scan.next();
+            System.out.println("to nie liczba");
+        }
+        return scan.nextInt();
     }
 }
